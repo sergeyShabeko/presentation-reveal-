@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!--slide 1-->
+				<section>
+					<h1>mongoDB</h1>
+					<h3>NoSQL Document based database.</h3>
+					<p>created by Sergey Shabeko</p>
+				</section>
+				<!--slide 2-->
+				<section>NoSQL = Not only SQL
+					<ul>Designed to build todays applications
+						<li>Fast to build</li>
+						<li>Quick to adapt</li>
+						<li>Easy to scale</li>
+						<li>Lessons learned from 40 years of RDBMS</li>
+					</ul>
+				</section>
+				<!--slide 3-->
+				<section>MongoDB Overview
+					<section class = 'slide2'><img src="./img/emplo.jpg" alt="">350+ employees
+					</section>
+					<section class = 'slide2'><img src="./img/customers.jpg" alt="">1.000+ customers
+					</section>
+					<section class = 'slide2'><img src="./img/map.jpg" alt="">13 offices around the world
+					</section>
+					<section class = 'slide2'><img src="./img/corp.jpg" alt="">Over $231 million in funding
+					</section>					
+				</section>
+				<!--slide 4-->
+				<section>MongoDB - Usability
+					<section> <p> Drivers for most popular
+							programming languages and frameworks</p>
+							<ul>
+								<li>Perl</li>
+								<li>PHP</li>
+								<li>Python</li>
+								<li>Ruby</li>
+								<li>C/C++</li>
+								<li>Java</li>
+								<li>.NET</li>
+								<li>JS</li>
+							</ul>
+							</section>
+					<section>Open-source drivers
+						<p>ActionScript, Clojure, Delphi, Node.js, F#, Go, Groovy, Lua, Objective C, Smalltalk and ect.
+							</p>
+						</section>
+					<section>
+							Command-line shell for
+							interacting directly with
+							database
+							<pre><code data-trim data-noescape>
+									> db.collection.insert({product:“MongoDB”,
+									type:“Document Database”})
+									>
+									> db.collection.findOne()
+									{
+									“_id”    : ObjectId(“5106c1c2fc629bfe52792e86”) “product” : “MongoDB”
+									“type”  : “Document Database”
+									}
+										</code></pre>
+							</section>
+				</section>
+				<!--slide 5-->
+				<section><h2>MongoDB is:</h2>
+				<p>General Purpose : Rich data model; Full featured indexes; Sophisticated query language.
+					<br>	<br>
+						Easy to Use: Easy mapping to object oriented code; Native language drivers in all popular languages; Simple to setup
+						and manage.
+						<br>	<br>
+						Fast & Scalable : Operates at inmemory speed wherever
+						Possible; Auto-sharding built in; Dynamically add / remove capacity with no downtime.
+						</p>
+				</section>
+				<!--slide 6-->
+				<section>MongoDB is Easy to Use
+					<section>
+						<img src="./img/diagr.jpg" alt="">
+						<h2>OR</h2>
+					</section>
+					<section>
+							<pre><code data-trim data-noescape>
+									{
+										title: ‘MongoDB’,
+										contributors: [
+										 { name: ‘Hashim Shaikh’,
+										 email: ‘hashim@10gen.com’ },
+										 { name: ‘Hayden Gill’,
+										 email: ‘hayden@10gen.com’ }
+									 ],
+									 model: {
+										 relational: false,
+										 awesome: true
+										}
+									 }
+									 
+										</code></pre>
+					</section>
+					<!--slide 7-->
+					<section>
+						<p>MySQL</p>
+						<pre><code data-trim data-noescape>
+								START TRANSACTION;
+								INSERT INTO contacts VALUES
+								(NULL, ‘joeblow’);
+								INSERT INTO contact_emails VALUES
+								( NULL, ”joe@blow.com”,
+								LAST_INSERT_ID() ),
+								( NULL, “joseph@blow.com”,
+								LAST_INSERT_ID() );
+								COMMIT;								
+									</code></pre>
+							<h2>OR</h2>
+						</section>
+						<section>
+							<p>MongoDB
+								</p>
+								<pre><code data-trim data-noescape>
+										db.contacts.save( {
+											userName: “joeblow”,
+											emailAddresses: [
+											“joe@blow.com”,
+											“joseph@blow.com” ] } );											
+											</code></pre>
+						</section>
+				</section>
+				<!--slide 8-->
+				<section><h2>Schema Free</h2>
+					<ul>
+						<li>MongoDB does not need any pre-defined data schema	</li>
+						<li>Every document could have different data!	</li>
+					</ul>
+					<img src="./img/block.jpg" alt="">
+				</section>
+					<!--slide 9-->
+				<section><h2>MongoDb is Fast and Scalable</h2>
+					<p>Better data locality	</p>
+					<p>In-Memory Caching</p>
+					<p>Distributed Architecture</p>
+					<blockquote>
+							We just can't get any faster than the way MongoDB handles our data.
+					</blockquote>
+					<span>Tony Tam</span><br>
+					<span>CTO, Wordnik</span>
+				</section>
+					<!--slide 10-->
+				<section><h2>MongoDB Security</h2>
+				<ul>
+					<li>SSL		
+						<ul>
+							<li> between client and server
+									
+									</li>
+							<li> Intra-cluster communication</li>
+						</ul>				</li>
+					<li>Authorization at the database level
+						<ul>
+							<li> Read Only/Read+Write/Administrator
+								</li>
+						</ul>
+						</li>
+					<li>Security Roadmap (tentative)
+						<ul>
+							<li>Pluggable authentication (PAM) 2.4	</li>
+							<li>Auditing 2.4</li>
+							<li>Cell level security 2.6</li>
+							<li>Common Criteria certification</li>
+						</ul>
+						</li>
+				</ul>
+				</section>
+				<!--slide 11-->
+				<section><p>NoSQL is
+						popular for
+						development &
+						deployment of
+						data-centric
+						applications.
+						</p>
+				<p>MongoDB makes
+						it easy to code,
+						scale, and
+						operate NoSQL.
+						</p>
+				<p>10gen is the
+						company behind
+						MongoDB
+						</p></section>
+				<!--slide 12-->
+				<section><h2>MongoDB</h2><h3>Document based database </h3></section>
+				<!--slide 13-->
+				<section><h2>For each key corresponds to a document</h2>
+					<pre><code data-trim data-noescape>
+							_id: ObjectId(“4daf…”) =>
+							{
+								first_name: “Oleg”,
+								last_name: “Kachan”,
+								contacts: {
+								twitter: “maximalno”,
+								email: “683009@gmail.com”
+								},skills: [“php”, “node.js”, “mongodb”]
+								}										
+								</code></pre>
+				</section>
+				<!--slide 14-->
+				<section><p>Organization of data</p>
+				<img src="./img/table.jpg" alt="">
+				</section>
+				<!--slide 15-->
+				<section><h3>Change of Thinking</h3>
+				<br>
+			<span>Skills of working with SQL databases are not suitable for NoSQL
+				</span>
+			<ul>
+				<li>No JOIN
+						</li>
+				<li>Data redundancy instead of normalization</li>
+				<li>Control data from the application, not from the database</li>
+			</ul></section>
+				<!--slide 16-->
+				<section><img src="./img/graf.jpg" alt=""></section>
+				<!--slide 17-->
+				<section><p>Application area</p>
+					<div class = 'number_list'>			<ol>Not suitable:
+
+					<li>if you use JOINs
+						</li>
+					<li>if you need transactions
+						</li>
+				</ol>
+				<br>	<br>
+				<ol>Suitable for:
+
+					<li>heterogeneous storage
+						</li>
+					<li>geodetic storage
+						</li>
+					<li>storage of logs and statistics
+						</li>
+				</ol></div>
+	
+				</section>
+				<!--slide 18-->
+				<section><h2>Data organization</h2>
+				<p>BSON data types
+					</p>
+				<ol>
+					<li>String</li>
+					<li>Integer</li>
+					<li>Double</li>
+					<li>Date</li>
+					<li>Byte array</li>
+					<li>Bullean</li>
+					<li>Null</li>
+					<li>BSON Object</li>
+				</ol>
+				</section>
+				<!--slide 19-->
+				<section><h2>Condition statements</h2>
+				<div>
+					<ul>
+						<li>$gt, $lt, $gte, $lte   	 	
+								</li>
+						<li>$ne</li>
+						<li>$in, $nin</li>
+						<li>$mod</li>
+						<li>$all</li>
+					</ul>
+					<ul>
+						<li>$size
+								</li>
+						<li>$exists</li>
+						<li>$type</li>
+						<li>$not</li>
+						<li>$where</li>
+					</ul>
+				</div>
+				</section>
+				<!--slide 20-->
+				<section><h2>Modification Operators</h2>
+					<div>
+						<ul>
+							<li>$set				
+									</li>
+							<li>$unset</li>
+							<li>$inc</li>
+							<li>$push</li>
+							<li>$pushAll</li>
+						</ul>
+						<ul>
+							<li>$addToSet
+									</li>
+							<li>$pop</li>
+							<li>$pull</li>
+							<li>$pullAll</li>
+						</ul>
+					</div></section>
+				<!--slide 21-->
+				<section><p>Delete</p><pre><code data-trim data-noescape>
+//SQL
+DELETE FROM users WHERE id = 1
+DELETE FROM users WHERE first_name = “Oleg”
+
+//MongoDB
+db.users.remove({ _id: ObjectId(“4df8fb81ed4cadd6271c0000”) })
+db.users.remove({ first_name: “Oleg”})
+
+							</code></pre></section>
+				<!--slide 22-->
+				<section>			<section><p>Creating indexes</p><pre><code data-trim data-noescape>
+						//SQL
+						ALTER TABLE `users` ADD INDEX (`first_name`) 
+						
+						//MongoDB
+						db.users.ensureIndex({ first_name: 1 }) 
+						db.users.ensureIndex({ first_name: -1 })
+													</code></pre></section></section>
+				<!--slide 23-->
+				<section>			<section><p>Geo-index</p><pre><code data-trim data-noescape>
+db.places.ensureIndex({ location: “2d” }
+					
+						</code></pre>
+						<p>
+								Search using operators <br>
+								$near – search for objects with sorting, the closest ones are the first<br>
+								$box – search for objects in a given square<br>
+								$center – search for objects in a given radius
+								
+						</p>
+					</section></section>
+							
+				<!--slide 24-->
+				<section><h2>Thank you for attention!</h2></section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
